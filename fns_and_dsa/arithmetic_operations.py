@@ -1,32 +1,27 @@
 # arithmetic_operations.py
 
-def perform_operation(num1: float, num2: float, operation: str):
+def perform_operation(num1, num2, operation):
     """
-    Perform a basic arithmetic operation on two numbers.
+    Perform basic arithmetic operations.
 
     Parameters:
-      - num1 (float): first number
-      - num2 (float): second number
-      - operation (str): one of 'add', 'subtract', 'multiply', 'divide'
+        num1 (float): First number
+        num2 (float): Second number
+        operation (str): 'add', 'subtract', 'multiply', or 'divide'
 
     Returns:
-      - float result for successful arithmetic operations
-      - a string error message for division by zero or unknown operation
+        float or str: Result of operation, or error message for division by zero
     """
-    # Normalize the operation string (remove surrounding spaces, make lowercase)
-    op = operation.strip().lower()
-
-    if op == "add":
+    if operation == 'add':
         return num1 + num2
-    elif op == "subtract":
+    elif operation == 'subtract':
         return num1 - num2
-    elif op == "multiply":
+    elif operation == 'multiply':
         return num1 * num2
-    elif op == "divide":
-        # Handle division by zero explicitly
+    elif operation == 'divide':
         if num2 == 0:
             return "Error: Division by zero"
         return num1 / num2
     else:
-        # Unknown operation - return a clear message the main script can show
-        return f"Error: Unknown operation '{operation}'"
+        return "Error: Invalid operation"
+
